@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point-in-Polygon Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label, button {
+            margin-top: 10px;
+            display: block;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Point-in-Polygon Checker</h1>
+    <form id="pointForm">
+        <label for="x">X:</label>
+        <input type="number" id="x" required>
+
+        <label for="y">Y:</label>
+        <input type="number" id="y" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="polygonChecker.js"></script>
+</body>
+
+</html>

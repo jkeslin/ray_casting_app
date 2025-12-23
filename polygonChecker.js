@@ -26,7 +26,7 @@ const isPointInPolygon = (point, vertices) => {
 };
 
 // Example polygon vertices
-const vertices = [
+const polygon = [
     [0, 0],
     [10, 1],
     [13, 9],
@@ -34,10 +34,16 @@ const vertices = [
     [-1, 5],
 ];
 
-// Given Point
-const point = [1, 2];
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('pointForm');
+    const resultDiv = document.getElementById('result');
 
-const inside = isPointInPolygon(point, vertices);
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const x = parseFloat(document.getElementById('x').value);
+        const y = parseFloat(document.getElementById('y').value);
 
-// Output the result
-console.log(`The point (${point[0]}, ${point[1]}) is ${inside ? "inside" : "outside"} the polygon.`);
+        const isInside = isPointInPolygon([x, y], polygon);
+        resultDiv.textContent = `The point (${x}, ${y}) is ${isInside ? "inside" : "outside"} the polygon.`
+    });
+});
